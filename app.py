@@ -20,7 +20,7 @@ def app(target_height):
     data = json.load(open(file))
     values = data['values']
     
-#Data Transformation
+# Data Transformation
     full_names = [' '.join([dict_['first_name'], dict_['last_name']]) for dict_ in values]
     heights_in = [int(dict_['h_in']) for dict_ in values]
     
@@ -32,9 +32,10 @@ def app(target_height):
 
     mtx_heights = np.triu(mtx_heights)
     
-# delete data and values to release some memorr space
+# delete data and values to release some memory space
     del data
     del values
+    
 # find indeces where the target height is met
 # comprise the pairs of players in tuples inside a list
     indeces = np.argwhere(mtx_heights == target_height)

@@ -24,13 +24,21 @@ def app(target_height):
     full_names = [' '.join([dict_['first_name'], dict_['last_name']]) for dict_ in values]
     heights_in = [int(dict_['h_in']) for dict_ in values]
     
-# Create triangular matrix with all possible sums of pair of heights
+# Create triangular matrix with all possible sums of pair of heights: Original
     mtx_heights = np.array(np.zeros((len(heights_in), len(heights_in))))
     for i, h in enumerate(heights_in):
         for j, h_ in enumerate(heights_in):
             mtx_heights[i,j] = h + h_
 
     mtx_heights = np.triu(mtx_heights)
+    
+# # Create triangular matrix with all possible sums of pairs of heights: refactored 
+# #  ************************ in progress; faster but not properly structured
+#     mtx_heights = []
+#     for i in range(len(heights_in)):
+#         n_h = heights_in[i:] + heights_in[:i]
+#         mtx_heights.append(np.add(heights_in, n_h))
+#     mtx_heights = np.array(mtx_heights)
     
 # delete data and values to release some memory space
     del data
@@ -41,7 +49,8 @@ def app(target_height):
     indeces = np.argwhere(mtx_heights == target_height)
     players = [(full_names[i], full_names[i_]) for i, i_ in indeces if i != i_]
     
-    return players
+    if players: return players
+    else: return ["No matches"]
 
 if __name__ == "__main__":
     target_height = 139 # default value, Change here for another target height

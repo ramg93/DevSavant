@@ -5,7 +5,7 @@
 
 ## Try it on you own. I share my solution in the next cells. 
 
-## Running the following cell will generate a ```app.py``` file which can be executed from console by running ```python app.py``` once the workdirectory is placed where the file is and the evironment ```DevSavant``` is set and active. 
+## Running the following cell will generate a ```app.py``` file which can be executed from console by running ```python app.py``` once the workdirectory is placed where the file is and the evironment ```MatchPlayers``` is set and active. 
 
 ## Otherwire, if you mean to run the code inside this jupyter notebook, just comment the first line: ```%%writefile app.py```
 

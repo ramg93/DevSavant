@@ -1,4 +1,4 @@
-name: DevSavant
+name: MatchPlayers
 channels:
   - defaults
 dependencies:

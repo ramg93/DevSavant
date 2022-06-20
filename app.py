@@ -6,7 +6,7 @@ def app(target_height):
     '''
         app function: load and tranform a JSON file with players full name
         and height in, both, inches and meters; and find which pairs of players'
-        heights match a target height. 
+        heights' sum matches a target height. 
         
         ex. 
             app(139) 
